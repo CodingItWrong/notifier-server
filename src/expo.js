@@ -1,6 +1,7 @@
 const Expo = require('expo-server-sdk').default;
 
 const token = process.env.EXPO_PUSH_TOKEN;
+console.log(`Expo Push Token: ${token}`);
 
 const expo = new Expo();
 
