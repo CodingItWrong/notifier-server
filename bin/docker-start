@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-yarn db:migrate
-yarn start
+NODE_ENV=production yarn db:migrate
+NODE_ENV=production yarn start
