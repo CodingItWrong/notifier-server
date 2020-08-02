@@ -1,4 +1,4 @@
-# nodeifier
+# notifier-server
 
 A system to receive events via a web hook and forward them along to an app via websockets and push notifications.
 
