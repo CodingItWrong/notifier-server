@@ -1,6 +1,6 @@
 const handler = require('./handler');
 
-const actionsToNotify = ['opened', 'closed'];
+const actionsToNotify = ['opened', 'closed', 'reopened'];
 
 const webhookRoute = (req, res) => {
   console.log(JSON.stringify(req.body));
