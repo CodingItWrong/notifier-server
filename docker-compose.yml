@@ -3,4 +3,4 @@ services:
   web:
     build: .
     ports:
-      - "3011"
+      - "3011:3000"
