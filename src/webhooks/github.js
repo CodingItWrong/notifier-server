@@ -7,7 +7,7 @@ const webhookRoute = (req, res) => {
 
   const {
     repository: { name: repoName },
-    pull_request: { title: prTitle, html_url: prUrl },
+    pull_request: { title: prTitle, html_url: prUrl } = {},
     action,
   } = req.body;
 
@@ -20,6 +20,7 @@ const webhookRoute = (req, res) => {
 
   if (!actionsToNotify.includes(action)) {
     console.log(`${action} not included in ${actionsToNotify}; skipping`);
+    res.end('Received ' + JSON.stringify(message));
     return;
   }
 
