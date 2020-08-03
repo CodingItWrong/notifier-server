@@ -1,4 +1,4 @@
-const handler = require('./handler');
+const handleIncoming = require('../handleIncoming');
 
 const actionsToNotify = [
   // PRs
@@ -45,7 +45,7 @@ const webhookRoute = (req, res) => {
     return;
   }
 
-  handler(message)
+  handleIncoming(message)
     .then(() => {
       res.end('Received ' + JSON.stringify(message));
     })

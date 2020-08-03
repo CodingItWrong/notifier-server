@@ -1,4 +1,4 @@
-const handler = require('./handler');
+const handleIncoming = require('../handleIncoming');
 
 const webhookRoute = (req, res) => {
   console.log(JSON.stringify(req.body));
@@ -16,7 +16,7 @@ const webhookRoute = (req, res) => {
     url,
   };
 
-  handler(message)
+  handleIncoming(message)
     .then(() => {
       res.end('Received ' + JSON.stringify(message));
     })
