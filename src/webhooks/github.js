@@ -1,20 +1,41 @@
 const handler = require('./handler');
 
-const actionsToNotify = ['opened', 'closed', 'reopened'];
+const actionsToNotify = [
+  // PRs
+  'opened',
+  'closed',
+  'reopened',
+
+  // check runs
+  'created',
+  'completed',
+  'rerequested',
+];
 
 const webhookRoute = (req, res) => {
   console.log(JSON.stringify(req.body));
 
   const {
     repository: { name: repoName },
-    pull_request: { title: prTitle, html_url: prUrl } = {},
     action,
+    pull_request,
+    check_run,
   } = req.body;
 
-  const message = {
-    text: `PR ${action} for repo ${repoName}: ${prTitle}`,
-    url: prUrl,
-  };
+  let message;
+  if (pull_request) {
+    const { title, html_url: url } = pull_request;
+    message = {
+      text: `${repoName} PR ${action}: ${title}`,
+      url,
+    };
+  } else if (check_run) {
+    const { name, conclusion, url } = check_run;
+    message = {
+      text: `${repoName} Check ${name}: ${conclusion || action}`,
+      url,
+    };
+  }
 
   console.log(message);
 
