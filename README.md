@@ -60,7 +60,7 @@ The app is an Express webapp with the following parts:
   - Secret: leave blank
   - SSL verification: Enable SSL verification
   - Which events would you like to trigger this webhook? Let me select individual events.
-    - Recommended: Pull requests
+    - Recommended: "Check runs" and "Pull requests"
   - Active: checked
 - Click "Add webhook"
 - To test, open a PR
