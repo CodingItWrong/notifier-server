@@ -1,4 +1,5 @@
 const db = require('../models');
+
 const { Message } = db;
 
 const create = attrs => Message.create(attrs);

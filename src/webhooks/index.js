@@ -1,8 +1,8 @@
-const express = require('express');
 const bodyParser = require('body-parser');
-const testRoute = require('./test');
+const express = require('express');
 const githubRoute = require('./github');
 const herokuRoute = require('./heroku');
+const testRoute = require('./test');
 
 const router = express.Router();
 router.post('/test', bodyParser.text({ type: '*/*' }), testRoute);

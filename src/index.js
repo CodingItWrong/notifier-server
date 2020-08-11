@@ -3,9 +3,9 @@ require('dotenv').config();
 
 const http = require('http');
 const express = require('express');
-const webhookRouter = require('./webhooks');
 const listRouter = require('./list');
 const { configureWebSockets } = require('./socket');
+const webhookRouter = require('./webhooks');
 
 const app = express();
 

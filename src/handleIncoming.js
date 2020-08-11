@@ -1,6 +1,6 @@
+const { push } = require('./expo');
 const repo = require('./repo');
 const { send } = require('./socket');
-const { push } = require('./expo');
 
 const handleIncoming = message =>
   repo.create(message).then(record => {
