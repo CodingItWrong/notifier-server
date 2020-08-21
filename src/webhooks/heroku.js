@@ -9,11 +9,9 @@ const webhookRoute = (req, res) => {
       status,
     },
   } = req.body;
-  const url = 'https://murmuring-garden-42327.herokuapp.com';
 
   const message = {
     text: `${name}: Build ${status}`,
-    url,
   };
 
   handleIncoming(message)
